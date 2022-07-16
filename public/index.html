@@ -1,10 +1,12 @@
 <html>
-    <body>
+    <body style="background-color:aliceblue">
+        <div id="time" style="width: 800px; background-color:rgb(174, 226, 234); margin: 0 auto; margin-top: 20%; text-align:center"></div>
         <script>
             const getDate = async () => {
                 const data = await fetch('/date');
                 const text = await data.text();
-                document.write(`<h1>Current time: ${text}</h1>`);
+                const container = document.getElementById('time');
+                container.innerHTML = `<h1>Current time: ${text}</h1>`
             }
             getDate();
         </script>
