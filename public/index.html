@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <script>
+            const getDate = async () => {
+                const data = await fetch('/date');
+                const text = await data.text();
+                document.write(`<h1>Current time is: ${text}</h1>`);
+            }
+            getDate();
+        </script>
+    </body>
+</html>
