@@ -4,7 +4,7 @@
             const getDate = async () => {
                 const data = await fetch('/date');
                 const text = await data.text();
-                document.write(`<h1>Current time is: ${text}</h1>`);
+                document.write(`<h1>Current time: ${text}</h1>`);
             }
             getDate();
         </script>
