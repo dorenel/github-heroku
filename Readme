@@ -1,0 +1,11 @@
+a simple node app which displays current time.
+a static page index.html will call the '/date' route in the server.
+the server will return the current timestamp.
+
+to run locally:
+    node server.js
+    goto localhost:3000
+
+github actions deploy to heroku:
+    make sure the api key in the github repo matches the heroku key
+    the app will be deployed to heroku automatically whenever there is a push to github
