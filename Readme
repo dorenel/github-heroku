@@ -12,7 +12,7 @@ github actions deploy to heroku:
 
 github actions deploy to dockerhub:
     make sure the dockerhub account name is correct in main.yml
-    the repo is not required to exist
+    the repo is not required to exist on dockerhub
     make sure there is a dockerfile for instructions to build the image
     make sure there is a .dockerignore to not deploy all files
     generate an access token on dockerhub and add it to the repo as a secret
