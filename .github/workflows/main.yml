@@ -15,3 +15,17 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "dorenel-github-heroku" #Must be unique in Heroku
           heroku_email: "dorene_lau@hotmail.com"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_TOKEN }} |
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Get the version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: Build the tagged Docker image
+        run: docker build -t image/test-image .
+      - name: Push the tagged Docker image
+        run: docker push image/test-image
