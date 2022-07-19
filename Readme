@@ -11,6 +11,8 @@ github actions deploy to heroku:
     the app will be deployed to heroku automatically whenever there is a push to github
 
 github actions deploy to dockerhub:
+    make sure the dockerhub account name is correct in main.yml
+    the repo is not required to exist
     make sure there is a dockerfile for instructions to build the image
     make sure there is a .dockerignore to not deploy all files
     generate an access token on dockerhub and add it to the repo as a secret
